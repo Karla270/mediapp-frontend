@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-sm-10">
+        <div class="card-header card-header-primary card-header-icon">
+            <div class="card-text">
+                <h2 class="mat-h2">Patient: {{consult.patient.firstName}} | Date: {{consult.consultDate |
+                    date:'dd-MM-yyyy'}}
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2 close">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>highlight_off</mat-icon>
+        </button>
+    </div>
+    <mat-card class="example-card" *ngFor="let d of consult.details">
+        <mat-card-header>
+            <mat-card-title>DIAGNOSIS</mat-card-title>
+            <mat-card-subtitle>{{d.diagnosis}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{d.treatment}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card" *ngFor="let ce of exams">
+        <mat-card-header>
+            <mat-card-title>EXAMS</mat-card-title>
+            <mat-card-subtitle>{{ce.exam.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{ce.exam.description}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

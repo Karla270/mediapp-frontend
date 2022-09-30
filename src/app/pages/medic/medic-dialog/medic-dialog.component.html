@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-sm-10">
+        <div class="card-header card-header-primary card-header-icon">
+            <div class="card-text">
+                <h2 class="mat-h2">Medic </h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2 close">
+        <button mat-icon-button (click)="close()">
+            <mat-icon>highlight_off</mat-icon>
+        </button>
+    </div>
+    <mat-form-field>
+        <input matInput placeholder="FirstName" [(ngModel)]="medic.firstName">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="LastName" [(ngModel)]="medic.lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="CMP" [(ngModel)]="medic.cmp" max="15" maxlength="15" type="number">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Photo" [(ngModel)]="medic.photoUrl">
+    </mat-form-field>
+    <img mat-card-image [src]="medic.photoUrl" alt="" width="50%" height="50%" *ngIf="medic.photoUrl">
+
+
+    <button mat-raised-button color="primary" (click)="operate()">Done</button>
+    <button mat-raised-button color="warn" class="mt-2" (click)="close()">Cancel</button>
+</div>
